@@ -33,11 +33,32 @@ function toggleDisplayStartScreen() {
       startScreenEL.classList.remove("hide");
       questionsEL.classList.add("hide");
       endScreenEL.classList.add("hide");
-   
+
+    // if the sart quiz button was clicked than
+    //    toggleDisplayQuestions()
+
+    if (startEL.addEventListener("click")){
+        toggleDisplayQuestions();
+    }
       
 }
   
+function toggleDisplayQuestions() {
+   
+    startScreenEL.classList.add("hide");
+    questionsEL.classList.remove("hide");
+    endScreenEL.classList.add("hide");
+  // if got answer to final question, than 
+  // toggleDisplayEndScreen()
+ }
+
+ function toggleDisplayEndScreen() {
+   
+    startScreenEL.classList.add("hide");
+    questionsEL.classList.add("hide");
+    endScreenEL.classList.remove("hide");
   
+ }
 // questions
 // first question displayed 
 // if the user clicked on correct answer than display correct and move to question 2, hide question 1
