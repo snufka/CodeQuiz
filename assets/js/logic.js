@@ -1,9 +1,14 @@
 // timeInterval for the Timer
 var timerEL = document.querySelector("#time");
 var startEL = document.querySelector("#start");
+var startScreenEL = document.querySelector("#start-screen");
+var questionsEL = document.querySelector("#questions");
+var questionsChoicesEL = document.querySelector(".choices");
+var endScreenEL = document.querySelector("#end-screen");
+
 var timeLeft = 75;
 
-//Activeting Fimer by "Start Quiz"
+//Activeting timer by clicking "Start Quiz"
 function TimerFu() { 
 setInterval(function()
 {timerEL.textContent = timeLeft;
@@ -22,17 +27,15 @@ startEL.addEventListener("click", TimerFu);
 // question screen: displayed - questions[i], hidden- other questions, #startScreen, #endscreen
 // last Screen: displayed -#endScreen, hidden-#startScreen, #questions
 
-function toggleDisplay(event) {
-    var value = event.target.value;
-    if(value === "keydown") {
-      mouseEventsEl.classList.add("hide");
-      keyEventsEl.classList.remove("hide");
-    }
-    else {
-      mouseEventsEl.classList.remove("hide");
-      keyEventsEl.classList.add("hide");
-    }
-  }
+
+function toggleDisplayStartScreen() {
+   
+      startScreenEL.classList.remove("hide");
+      questionsEL.classList.add("hide");
+      endScreenEL.classList.add("hide");
+   
+      
+}
   
   
 // questions
