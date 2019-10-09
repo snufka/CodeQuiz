@@ -1,17 +1,18 @@
 // timeInterval for the Timer
-var timeEL= document.querySelector("#time");
+var timerEL = document.querySelector("#time");
+var startEL = document.querySelector("#start");
+var timeLeft = 75;
 
-function TimerFu() {
-    var timeLeft = 75;
+//Activeting Fimer by "Start Quiz"
+function TimerFu() { 
+setInterval(function()
+{timerEL.textContent = timeLeft;
+    timeLeft--;
+    if(timeLeft <= 0){
+        timerEL.textContent=" "
+    }
+  },
+1000);
+}
   
-    var timeInterval = setInterval(function() {
-      timerEl.textContent = timeLeft + " seconds remaining";
-      timeLeft--;
-  
-      if (timeLeft === 0) {
-        timerEl.textContent = "";
-                  }
-  
-    }, 1000);
-  }
-  
+  startEL.addEventListener("click", TimerFu)
