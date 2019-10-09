@@ -9,6 +9,11 @@ var questions = [
       choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
       answer: "parentheses"
     },
-    ///etc.
+    
   ];
   
+console.log(questions[0].choices[1]);
+
+console.log(questions[0].choices.indexOf("alerts"));
+console.log(questions[1].choices.indexOf("parentheses"));
+ 

@@ -62,6 +62,17 @@ function toggleDisplayQuestions() {
 // questions
 // first question displayed 
 // if the user clicked on correct answer than display correct and move to question 2, hide question 1
-// if user clicked on the wrong answer than display wrong and reduce 5 secs from the timeLeft, move to question 2 and hide question 1
+// if user clicked on the wrong answer than display wrong and reduce 10 secs from the timeLeft, move to question 2 and hide question 1
+
+// if user's choose is equal to question's answer, than scoure++, and display "correct"
+//if user's choose is not equal to question's answer, than scoure doent change,  display "wrong" and didacet 10 sec from "time left"
+
+
+var score=0;
+
+
+
+
+
 
 
