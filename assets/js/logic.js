@@ -35,5 +35,9 @@ function toggleDisplay(event) {
   }
   
   
+// questions
+// first question displayed 
+// if the user clicked on correct answer than display correct and move to question 2, hide question 1
+// if user clicked on the wrong answer than display wrong and reduce 5 secs from the timeLeft, move to question 2 and hide question 1
 
 
