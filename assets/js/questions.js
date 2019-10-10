@@ -12,10 +12,8 @@ var questions = [
     
   ];
   
-console.log(questions[0].choices[1]);
 
-console.log(questions[0].choices.indexOf("alerts"));
-console.log(questions[1].choices.indexOf("parentheses"));
+console.log(questions[0].choices.indexOf(questions[0].answer));
 
 var length = questions.length;
 // find function to find answer inside choices

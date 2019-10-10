@@ -18,6 +18,7 @@ setInterval(function()
     }
   },
 1000);
+toggleDisplayQuestions();
 }
   
 startEL.addEventListener("click", TimerFu);
@@ -36,10 +37,6 @@ function toggleDisplayStartScreen() {
 
     // if the sart quiz button was clicked than
     //    toggleDisplayQuestions()
-
-    if (startEL.addEventListener("click")){
-        toggleDisplayQuestions();
-    }
       
 }
   
