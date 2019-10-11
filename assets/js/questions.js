@@ -50,11 +50,15 @@ function slicingFu() {
 
   for (var i = 0; i < questions.length; i++) {
 
+    questions[i].choices.forEach(function (entry) {
+      console.log(entry);
+    });
 
-    console.log(questions[i].choices.slice(0, 4));
   }
 
 }
+
+
 var sliceChoices1 = questions[0].choices.slice(0, 4)
-console.log(sliceChoices1);
+
 slicingFu();
