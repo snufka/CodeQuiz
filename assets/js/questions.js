@@ -29,15 +29,21 @@ var questions = [
 
 //!!!!!
 
-console.log(questions[0].choices.indexOf(questions[0].answer));
+//console.log(questions[0].choices.indexOf(questions[0].answer));
 //console.log(questions[0].choices.slice(0, 4));
 var length = questions.length;
 
+var userAnswer = choices.addEventListener("click", function () {
+  console.log("working");
+  console.log(userAnswer.value);
+});
+
 function scoringFu() {
 
-  if (event = questions[i].choices.indexOf(questions[i].answer)
+  if (questions[i].choices.indexOf(userAnswer) = questions[i].choices.indexOf(questions[i].answer)
 
   ) {
+    var score = 0;
     score++;
     prompt("Correct");
 
@@ -46,6 +52,7 @@ function scoringFu() {
     timeLeft = timeLeft - 5;
     prompt("wrong");
   }
+  console.log(score);
 }
 
 
@@ -54,6 +61,7 @@ for (var i = 0; i < questions.length; i++) {
 
   choices.addEventListener("click", scoringFu);
 }
+
 
 
 

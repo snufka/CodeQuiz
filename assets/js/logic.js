@@ -74,7 +74,7 @@ function toggleDisplayEndScreen() {
 //if user's choose is not equal to question's answer, than scoure doent change,  display "wrong" and didacet 10 sec from "time left"
 
 
-var score = 0;
+
 
 
 
