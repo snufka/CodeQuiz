@@ -2,25 +2,31 @@
 var timerEL = document.querySelector("#time");
 var startEL = document.querySelector("#start");
 var startScreenEL = document.querySelector("#start-screen");
+//different screens display
 var questionsEL = document.querySelector("#questions");
 var questionsChoicesEL = document.querySelector(".choices");
 var endScreenEL = document.querySelector("#end-screen");
+//questions display 
+var titelEL = document.querySelector("#question-title");
+var choicesEL = document.querySelector("#choices");
 
 var timeLeft = 75;
 
 //Activeting timer by clicking "Start Quiz"
-function TimerFu() { 
-setInterval(function()
-{timerEL.textContent = timeLeft;
+function TimerFu() {
+  setInterval(function () {
+    timerEL.textContent = timeLeft;
+
     timeLeft--;
-    if(timeLeft <= 0){
-        timerEL.textContent=" "
+
+    if (timeLeft <= 0) {
+      timerEL.textContent = " "
     }
   },
-1000);
-toggleDisplayQuestions();
+    1000);
+  toggleDisplayQuestions();
 }
-  
+
 startEL.addEventListener("click", TimerFu);
 
 //Display
@@ -30,32 +36,32 @@ startEL.addEventListener("click", TimerFu);
 
 
 function toggleDisplayStartScreen() {
-   
-      startScreenEL.classList.remove("hide");
-      questionsEL.classList.add("hide");
-      endScreenEL.classList.add("hide");
 
-    // if the sart quiz button was clicked than
-    //    toggleDisplayQuestions()
-      
+  startScreenEL.classList.remove("hide");
+  questionsEL.classList.add("hide");
+  endScreenEL.classList.add("hide");
+
+  // if the sart quiz button was clicked than
+  //    toggleDisplayQuestions()
+
 }
-  
+
 function toggleDisplayQuestions() {
-   
-    startScreenEL.classList.add("hide");
-    questionsEL.classList.remove("hide");
-    endScreenEL.classList.add("hide");
+
+  startScreenEL.classList.add("hide");
+  questionsEL.classList.remove("hide");
+  endScreenEL.classList.add("hide");
   // if got answer to final question, than 
   // toggleDisplayEndScreen()
- }
+}
 
- function toggleDisplayEndScreen() {
-   
-    startScreenEL.classList.add("hide");
-    questionsEL.classList.add("hide");
-    endScreenEL.classList.remove("hide");
-  
- }
+function toggleDisplayEndScreen() {
+
+  startScreenEL.classList.add("hide");
+  questionsEL.classList.add("hide");
+  endScreenEL.classList.remove("hide");
+
+}
 // questions
 // first question displayed 
 // if the user clicked on correct answer than display correct and move to question 2, hide question 1
@@ -65,7 +71,7 @@ function toggleDisplayQuestions() {
 //if user's choose is not equal to question's answer, than scoure doent change,  display "wrong" and didacet 10 sec from "time left"
 
 
-var score=0;
+var score = 0;
 
 
 
