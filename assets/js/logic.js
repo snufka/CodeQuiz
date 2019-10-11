@@ -53,7 +53,7 @@ function toggleDisplayQuestions() {
 
 
   titleEL.textContent = questions[0].title;
-  choicesEL.textContent = sliceChoices1;
+  choicesEL.textContent = questions[0].choices;
   // if got answer to final question, than 
   // toggleDisplayEndScreen()
 }

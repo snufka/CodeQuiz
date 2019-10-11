@@ -33,17 +33,30 @@ console.log(questions[0].choices.indexOf(questions[0].answer));
 //console.log(questions[0].choices.slice(0, 4));
 var length = questions.length;
 
-function scoring(event) {
+function scoringFu() {
 
-  for (var i = 0; i < questions.length; i++) {
-    if (userClick = questions[i].choices.indexOf(questions[i].answer)
+  if (event = questions[i].choices.indexOf(questions[i].answer)
 
-    ) {
-      score++;
+  ) {
+    score++;
+    prompt("Correct");
 
-    }
+  }
+  else {
+    timeLeft = timeLeft - 5;
+    prompt("wrong");
   }
 }
+
+
+
+for (var i = 0; i < questions.length; i++) {
+
+  choices.addEventListener("click", scoringFu);
+}
+
+
+
 
 // find function to find answer inside choices
 function slicingFu() {
@@ -59,6 +72,5 @@ function slicingFu() {
 }
 
 
-var sliceChoices1 = questions[0].choices.slice(0, 4)
-
-slicingFu();
+var sliceChoices1 = questions[0].choices.slice(0, 4);
+  //console.log(sliceChoices1)
