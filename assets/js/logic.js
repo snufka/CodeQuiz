@@ -7,7 +7,7 @@ var questionsEL = document.querySelector("#questions");
 var questionsChoicesEL = document.querySelector(".choices");
 var endScreenEL = document.querySelector("#end-screen");
 //questions display 
-var titelEL = document.querySelector("#question-title");
+var titleEL = document.querySelector("#question-title");
 var choicesEL = document.querySelector("#choices");
 
 var timeLeft = 75;
@@ -41,8 +41,7 @@ function toggleDisplayStartScreen() {
   questionsEL.classList.add("hide");
   endScreenEL.classList.add("hide");
 
-  // if the sart quiz button was clicked than
-  //    toggleDisplayQuestions()
+
 
 }
 
@@ -51,6 +50,10 @@ function toggleDisplayQuestions() {
   startScreenEL.classList.add("hide");
   questionsEL.classList.remove("hide");
   endScreenEL.classList.add("hide");
+
+
+  titleEL.textContent = questions[0].title;
+  choicesEL.textContent = sliceChoices1;
   // if got answer to final question, than 
   // toggleDisplayEndScreen()
 }
