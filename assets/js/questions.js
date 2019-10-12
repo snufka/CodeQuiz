@@ -1,3 +1,6 @@
+var choicesEL = document.querySelector("#choices");
+
+
 var questions = [
   {
     title: "Commonly used data types DO NOT include:",
@@ -33,14 +36,11 @@ var questions = [
 //console.log(questions[0].choices.slice(0, 4));
 var length = questions.length;
 
-var userAnswer = choices.addEventListener("click", function () {
-  console.log("working");
-  console.log(userAnswer.value);
-});
+
 
 function scoringFu() {
 
-  if (questions[i].choices.indexOf(userAnswer) = questions[i].choices.indexOf(questions[i].answer)
+  if (questions[i].choices.indexOf(userAnswer) == questions[i].choices.indexOf(questions[i].answer)
 
   ) {
     var score = 0;
@@ -57,14 +57,6 @@ function scoringFu() {
 
 
 
-for (var i = 0; i < questions.length; i++) {
-
-  choices.addEventListener("click", scoringFu);
-}
-
-
-
-
 
 // find function to find answer inside choices
 function slicingFu() {
@@ -73,11 +65,26 @@ function slicingFu() {
 
     questions[i].choices.forEach(function (entry) {
       console.log(entry);
+      a = document.createElement('p')
+
+      a.textContent = entry;
+      a.addEventListener("click", function (event) {
+        console.log("working");
+        console.log(event);
+      });
+
+      document.body.appendChild(a);
+
+
+
+
     });
 
   }
 
 }
+
+slicingFu();
 
 
 var sliceChoices1 = questions[0].choices.slice(0, 4);
