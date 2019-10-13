@@ -45,7 +45,7 @@ function slicingFu() {
 
       a.textContent = entry;
       a.addEventListener("click", function (event) {
-        console.log("working");
+        console.log("clicked");
         console.log(event);
         console.log(event.target.innerText);
         console.log(questions[i].choices.indexOf(event.target.innerText));// NOT WORKING
