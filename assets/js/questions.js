@@ -48,7 +48,7 @@ function slicingFu() {
         console.log("clicked");
         console.log(event);
         console.log(event.target.innerText);
-        console.log(questions[i].choices.indexOf(event.target.innerText));// NOT WORKING
+        console.log(questions[i].choices.indexOf(event.target.innerText));// NOT WORKING- I want to find the index of user's click vlue inside array choices
       });
 
       document.body.appendChild(a);
