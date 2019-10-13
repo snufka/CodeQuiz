@@ -30,14 +30,11 @@ var questions = [
 
 ];
 
-//!!!!!
 
-//console.log(questions[0].choices.indexOf(questions[0].answer));
-//console.log(questions[0].choices.slice(0, 4));
 var length = questions.length;
 
 
-// find function to find answer inside choices
+// function to dislay the answers in different rows
 function slicingFu() {
 
   for (var i = 0; i < questions.length; i++) {
@@ -50,9 +47,12 @@ function slicingFu() {
       a.addEventListener("click", function (event) {
         console.log("working");
         console.log(event);
+        console.log(event.target.innerText);
+        console.log(questions[i].choices.indexOf(event.target.innerText));// NOT WORKING
       });
 
       document.body.appendChild(a);
+      a = choicesEL;
 
 
     });
@@ -60,25 +60,32 @@ function slicingFu() {
   }
 
 }
+
+//NOT WORKING- function to comper users click to the correct answer and score accordingly
 function scoringFu(event) {
 
-  if (event.innerText == questions[i].choices.indexOf(questions[i].answer)
-
-  ) {
+  for (var m = 0; m < questions.length; m++) {
     var score = 0;
-    score++;
-    prompt("Correct");
 
+
+    var usersClick = event.target.innerText;
+
+    if (questions[m].choices.indexOf(usersClick) == questions[m].choices.indexOf(questions[i].answer)
+
+    ) {
+      score++;
+      prompt("Correct");
+
+    }
+    else {
+      timeLeft = timeLeft - 5;
+      prompt("wrong");
+    }
+    console.log(score);
   }
-  else {
-    timeLeft = timeLeft - 5;
-    prompt("wrong");
-  }
-  console.log(score);
 }
 
 slicingFu();
+scoringFu(event);
 
 
-var sliceChoices1 = questions[0].choices.slice(0, 4);
-  //console.log(sliceChoices1)
