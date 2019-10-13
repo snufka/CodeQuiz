@@ -37,27 +37,6 @@ var questions = [
 var length = questions.length;
 
 
-
-function scoringFu() {
-
-  if (questions[i].choices.indexOf(userAnswer) == questions[i].choices.indexOf(questions[i].answer)
-
-  ) {
-    var score = 0;
-    score++;
-    prompt("Correct");
-
-  }
-  else {
-    timeLeft = timeLeft - 5;
-    prompt("wrong");
-  }
-  console.log(score);
-}
-
-
-
-
 // find function to find answer inside choices
 function slicingFu() {
 
@@ -76,12 +55,26 @@ function slicingFu() {
       document.body.appendChild(a);
 
 
-
-
     });
 
   }
 
+}
+function scoringFu(event) {
+
+  if (event.innerText == questions[i].choices.indexOf(questions[i].answer)
+
+  ) {
+    var score = 0;
+    score++;
+    prompt("Correct");
+
+  }
+  else {
+    timeLeft = timeLeft - 5;
+    prompt("wrong");
+  }
+  console.log(score);
 }
 
 slicingFu();
