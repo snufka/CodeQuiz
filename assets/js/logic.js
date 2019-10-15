@@ -57,7 +57,7 @@ function toggleDisplayQuestions() {
   // if got answer to final question, than 
   // toggleDisplayEndScreen()
   slicingFu();
-  scoringFu(event);
+
 }
 
 function toggleDisplayEndScreen() {

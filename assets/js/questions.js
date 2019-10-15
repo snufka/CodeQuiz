@@ -38,6 +38,7 @@ var length = questions.length;
 function slicingFu() {
 
   for (var i = 0; i < questions.length; i++) {
+    event.preventDefault();
 
     questions[i].choices.forEach(function (entry) {
       console.log(entry);
@@ -53,36 +54,36 @@ function slicingFu() {
       });
 
       document.body.appendChild(a);
-      a = choicesEL;
+      function scoringFu(event) {
 
+        for (var m = 0; m < questions.length; m++) {
+          var score = 0;
+
+
+          if (event.target.innerText === questions[i].answer) {
+            score++;
+            prompt("Correct");
+
+          }
+          else {
+            timeLeft = timeLeft - 5;
+            prompt("wrong");
+          }
+          console.log(score);
+          console.log(event.target.innerText);
+          console.log(questions[m].answer);
+        }
+      }
 
     });
 
   }
 
 }
+scoringFu(event);
 
 //NOT WORKING- function to comper users click to the correct answer and score accordingly
-function scoringFu(event) {
 
-  for (var m = 0; m < questions.length; m++) {
-    var score = 0;
-
-
-    if (event.target.innerText === questions[m].answer) {
-      score++;
-      prompt("Correct");
-
-    }
-    else {
-      timeLeft = timeLeft - 5;
-      prompt("wrong");
-    }
-    console.log(score);
-    console.log(event.target.innerText);
-    console.log(questions[m].answer);
-  }
-}
 
 
 
