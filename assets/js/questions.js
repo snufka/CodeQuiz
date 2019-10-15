@@ -49,42 +49,25 @@ function slicingFu() {
         console.log("clicked");
         console.log(event);
         console.log(event.target.innerText);
-        console.log(questions[i].answer)
-        // NOT WORKING- I want to find the index of user's click vlue inside array choices
+        console.log(questions[i].answer);
+        titleEL.textContent = questions[i].title;
+        choicesEL.textContent = questions[i].choices;
+
+
+        if (entry.target.innerText === questions[i].answer) {
+          score++;
+          prompt("Correct");
+
+        }
+        else {
+          timeLeft = timeLeft - 5;
+          prompt("wrong");
+        }
       });
 
       document.body.appendChild(a);
-      function scoringFu(event) {
-
-        for (var m = 0; m < questions.length; m++) {
-          var score = 0;
 
 
-          if (event.target.innerText === questions[i].answer) {
-            score++;
-            prompt("Correct");
-
-          }
-          else {
-            timeLeft = timeLeft - 5;
-            prompt("wrong");
-          }
-          console.log(score);
-          console.log(event.target.innerText);
-          console.log(questions[m].answer);
-        }
-      }
-
-    });
-
+    })
   }
-
-}
-scoringFu(event);
-
-//NOT WORKING- function to comper users click to the correct answer and score accordingly
-
-
-
-
-
+};
