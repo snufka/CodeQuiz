@@ -34,6 +34,7 @@ var questions = [
 var length = questions.length;
 
 
+
 // function to dislay the answers in different rows
 function slicingFu() {
 
@@ -44,14 +45,15 @@ function slicingFu() {
       console.log(entry);
       a = document.createElement('p')
 
+
       a.textContent = entry;
       a.addEventListener("click", function (event) {
         console.log("clicked");
         console.log(event);
         console.log(event.target.innerText);
         console.log(questions[i].answer);
-        titleEL.textContent = questions[i].title;
-        choicesEL.textContent = questions[i].choices;
+
+        document.body.appendChild(a);
 
 
         if (entry.target.innerText === questions[i].answer) {
@@ -65,7 +67,7 @@ function slicingFu() {
         }
       });
 
-      document.body.appendChild(a);
+
 
 
     })

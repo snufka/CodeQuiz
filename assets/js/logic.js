@@ -12,11 +12,13 @@ var choicesEL = document.querySelector("#choices");
 //score display 
 var initialsEL = document.querySelector("#initials");
 var finalScoreEL = document.querySelector("#final-score");
+var highscoresFormEL = document.querySelector("#highscoresForm");
 
 
 
 
 var timeLeft = 75;
+var score = 0;
 
 //Activeting timer by clicking "Start Quiz"
 function TimerFu() {
@@ -71,6 +73,41 @@ function toggleDisplayEndScreen() {
   startScreenEL.classList.add("hide");
   questionsEL.classList.add("hide");
   endScreenEL.classList.remove("hide");
+
+  //need to add scoring and sort the list from bidest to largest score
+
+  function renderHighScore() {
+
+    initialsEL.innerHTML = "";
+    initialsList = [];
+
+    for (var n = 0; n < todos.length; n++) {
+      var initials = initialsList;
+
+      var li = document.createElement("li");
+      li.textContent = initials;
+      initialsList.appendChild(li);
+    }
+  }
+
+  highscoresFormEL.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var initialsText = initials.value.trim();
+
+    if (initialsText === "") {
+      return;
+    }
+
+    initialsList.push(initialsText);
+
+
+
+    renderHighScore();
+  });
+
+
+
 
 }
 
