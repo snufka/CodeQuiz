@@ -45,18 +45,21 @@ function slicingFu() {
       console.log(entry);
       a = document.createElement('p')
 
+      var b = i
+
 
       a.textContent = entry;
       a.addEventListener("click", function (event) {
         console.log("clicked");
+
         console.log(event);
         console.log(event.target.innerText);
-        console.log(questions[i].answer);
-
-        document.body.appendChild(a);
+        console.log(questions[b].answer);
 
 
-        if (entry.target.innerText === questions[i].answer) {
+
+
+        if (event.target.innerText === questions[b].answer) {
           score++;
           prompt("Correct");
 
@@ -67,7 +70,7 @@ function slicingFu() {
         }
       });
 
-
+      document.body.appendChild(a);
 
 
     })
