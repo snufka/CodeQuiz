@@ -56,6 +56,8 @@ function toggleDisplayQuestions() {
   choicesEL.textContent = questions[0].choices;
   // if got answer to final question, than 
   // toggleDisplayEndScreen()
+  slicingFu();
+  scoringFu(event);
 }
 
 function toggleDisplayEndScreen() {

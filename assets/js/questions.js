@@ -48,7 +48,8 @@ function slicingFu() {
         console.log("clicked");
         console.log(event);
         console.log(event.target.innerText);
-        console.log(questions[i].choices.indexOf(event.target.innerText));// NOT WORKING- I want to find the index of user's click vlue inside array choices
+        console.log(questions[i].answer)
+        // NOT WORKING- I want to find the index of user's click vlue inside array choices
       });
 
       document.body.appendChild(a);
@@ -68,11 +69,7 @@ function scoringFu(event) {
     var score = 0;
 
 
-    var usersClick = event.target.innerText;
-
-    if (questions[m].choices.indexOf(usersClick) == questions[m].choices.indexOf(questions[i].answer)
-
-    ) {
+    if (event.target.innerText === questions[m].answer) {
       score++;
       prompt("Correct");
 
@@ -82,10 +79,11 @@ function scoringFu(event) {
       prompt("wrong");
     }
     console.log(score);
+    console.log(event.target.innerText);
+    console.log(questions[m].answer);
   }
 }
 
-slicingFu();
-scoringFu(event);
+
 
 
