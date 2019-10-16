@@ -17,7 +17,7 @@ var highscoresFormEL = document.querySelector("#highscoresForm");
 
 
 
-var timeLeft = 10;
+var timeLeft = 75;
 var score = 0;
 
 //Activeting timer by clicking "Start Quiz"
@@ -76,18 +76,20 @@ function toggleDisplayQuestion(index) {
       console.log(event);
       console.log(event.target.innerText);
       console.log(questions[index].answer);
+      console.log(score);
 
 
 
 
       if (event.target.innerText === questions[index].answer) {
         score++;
-        prompt("Correct");
+        alert("Correct");
+
 
       }
       else {
         timeLeft = timeLeft - 5;
-        prompt("wrong");
+        alert("wrong");
       }
       toggleDisplayQuestion(index + 1);
     });
@@ -104,6 +106,8 @@ function toggleDisplayEndScreen() {
   startScreenEL.classList.add("hide");
   questionsEL.classList.add("hide");
   endScreenEL.classList.remove("hide");
+
+  finalScoreEL.textContent = score;
 
   //need to add scoring and sort the list from bidest to largest score
 
