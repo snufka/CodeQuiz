@@ -115,44 +115,42 @@ function toggleDisplayEndScreen() {
 
   //need to add scoring and sort the list from bidest to largest score
 
-  function renderHighScore() {
+  initialsEL.innerHTML = "";
+  initialsList = [];
 
-    initialsEL.innerHTML = "";
-    initialsList = [];
+  for (var n = 0; n < todos.length; n++) {
+    var initials = initialsList;
 
-    for (var n = 0; n < todos.length; n++) {
-      var initials = initialsList;
+    var li = document.createElement("li");
+    li.textContent = initials;
+    initialsList.appendChild(li);
+    console.log(initials);
 
-      var li = document.createElement("li");
-      li.textContent = initials;
-      initialsList.appendChild(li);
-      console.log(initials);
+  }
+}
 
-    }
+highscoresFormEL.addEventListener("submit", function (event) {
+  event.preventDefault();
+  //location.replace("./Highscores.html")
+  console.log(initialsText);
+  localStorage.getItem("HighScore");
+
+  var initialsText = initials.value.trim();
+
+  if (initialsText === "") {
+    return;
   }
 
-  highscoresFormEL.addEventListener("submit", function (event) {
-    event.preventDefault();
-    //location.replace("./Highscores.html")
-    console.log(initialsText);
-
-    var initialsText = initials.value.trim();
-
-    if (initialsText === "") {
-      return;
-    }
-
-    initialsList.push(initialsText);
+  initialsList.push(initialsText);
 
 
 
-    renderHighScore();
-  });
+  renderHighScore();
+});
 
 
 
 
-}
 
 
 
