@@ -13,6 +13,10 @@ var choicesEL = document.querySelector("#choices");
 var initialsEL = document.querySelector("#initials");
 var finalScoreEL = document.querySelector("#final-score");
 var highscoresFormEL = document.querySelector("#highscoresForm");
+// local storage - client side
+localStorage.setItem(score);
+localStorage.setItem(initials);
+
 
 
 
@@ -122,11 +126,15 @@ function toggleDisplayEndScreen() {
       var li = document.createElement("li");
       li.textContent = initials;
       initialsList.appendChild(li);
+      console.log(initials);
+
     }
   }
 
   highscoresFormEL.addEventListener("submit", function (event) {
     event.preventDefault();
+    //location.replace("./Highscores.html")
+    console.log(initialsText);
 
     var initialsText = initials.value.trim();
 
