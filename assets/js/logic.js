@@ -14,8 +14,8 @@ var initialsEL = document.querySelector("#initials");
 var finalScoreEL = document.querySelector("#final-score");
 var highscoresFormEL = document.querySelector("#highscoresForm");
 // local storage - client side
-localStorage.setItem(score);
-localStorage.setItem(initials);
+//localStorage.setItem(score);
+//localStorage.setItem(initials);
 
 
 
